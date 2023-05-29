@@ -15,7 +15,7 @@ export default function Cast() {
     const BASE_URL = `https://api.themoviedb.org/3/movie/${idNumber}/credits`;
     try {
       const response = await axios.get(`${BASE_URL}?api_key=9dc8cf1c3b797577de272ea272eaf078`);
-         setActors([...actors,...response.data.cast]);
+         setActors(response.data.cast);
       }
     catch(error){console.log(error)}
   }
