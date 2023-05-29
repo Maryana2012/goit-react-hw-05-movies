@@ -15,16 +15,15 @@ export default function Cast() {
     const BASE_URL = `https://api.themoviedb.org/3/movie/${idNumber}/credits`;
     try {
       const response = await axios.get(`${BASE_URL}?api_key=9dc8cf1c3b797577de272ea272eaf078`);
-        // console.log(response.data.cast);
-        setActors([...actors,...response.data.cast]);
-        // console.log(actors);
-    }
+         setActors([...actors,...response.data.cast]);
+      }
     catch(error){console.log(error)}
   }
     axiosResponse();
-  },[])
+    }, [])
+    
     return (
-        <> {actors.map((actor) => { return <div  key={actor.name}><img  src={actor.profile_path} alt="actor.name" />
+        <> {actors.map((actor) => { return <div  key={actor.id}><img  src={actor.profile_path} alt="actor.name" />
                 <p>{actor.name}</p>
                 <p>{actor.character} </p>
         </div>
@@ -35,4 +34,3 @@ export default function Cast() {
     )
 }
 
-// https://api.themoviedb.org/3/movie/{movie_id}/credits

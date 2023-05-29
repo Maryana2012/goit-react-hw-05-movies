@@ -1,9 +1,9 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useLocation } from "react-router-dom";
 
 export default function FilmDetailsCard(props) {
 
     const { img, name, title, year, genres, overview, id} = props
-       
+     const location = useLocation();  
     return (
         <>
             <img src={img} alt={title} />

@@ -12,11 +12,16 @@ export default function App(){
     <Routes>
       <Route path='/' element={<Layout />}>
          <Route index element={<HomePage />} />
+         {/* <Route path='/:filmId' element={<FilmDetails />}>
+          <Route path='cast' element={<Cast />} />
+          <Route path='reviews' element={ <Reviews/>} /> */}
+        {/* </Route> */}
         <Route path='movies' element={<MoviesPage />} />
-        <Route path='/:filmId' element={<FilmDetails />}>
+        <Route path='/movies/:filmId' element={<FilmDetails />} >
           <Route path='cast' element={<Cast />} />
           <Route path='reviews' element={ <Reviews/>} />
         </Route>
+       
       </Route>
       
    </Routes>
