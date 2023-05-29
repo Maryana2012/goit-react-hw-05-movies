@@ -37,7 +37,7 @@ export default function FilmDetails() {
     catch(error){console.log(error)}
   }
     axiosResponse();
-  }, [])
+  }, [idNumber])
   
  
  const handleBack=()=> {

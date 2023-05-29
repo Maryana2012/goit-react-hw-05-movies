@@ -20,7 +20,7 @@ export default function Cast() {
     catch(error){console.log(error)}
   }
     axiosResponse();
-    }, [])
+    }, [idNumber])
     
     return (
         <> {actors.map((actor) => { return <div  key={actor.id}><img  src={actor.profile_path} alt="actor.name" />

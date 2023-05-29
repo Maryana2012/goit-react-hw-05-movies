@@ -22,7 +22,7 @@ export default function Reviews() {
     catch(error){console.log(error)}
   }
     axiosResponse();
-    }, [])
+    }, [idNumber])
     
   return (
    
