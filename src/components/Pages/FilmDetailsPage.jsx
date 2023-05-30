@@ -8,7 +8,7 @@ import css from '../Pages/FilmDetailsPage.module.css'
 export default function FilmDetails() {
     
   const [img, setImg] = useState('');
-  const [name, setName] = useState('');
+  // const [name, setName] = useState('');
   const [title, setTitle] = useState('');
   const [year, setYear] = useState('');
   const [overview, setOverview] = useState('')
@@ -28,7 +28,7 @@ export default function FilmDetails() {
     try {
       const response = await axios.get(`${BASE_URL}?api_key=9dc8cf1c3b797577de272ea272eaf078`);
       setImg(response.data.poster_path);
-      setName(response.data.name)
+      // setName(response.data.name)
       setTitle(response.data.title);
       const getYear = () => new Date(response.data.release_date).getFullYear();
       setYear(getYear)
