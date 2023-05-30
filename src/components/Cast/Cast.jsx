@@ -24,16 +24,15 @@ export default function Cast() {
     }, [idNumber])
     
     return (
-      <div className={css.container}> {actors.map((actor) => {
-        return <div className={css.container__actor} key={actor.id}>
-          <img className={css.img} src={`https://image.tmdb.org/t/p/w200${actor.profile_path}`}
+      <div className={css.container}>
+        {actors.map((actor) => {
+          return <div className={css.container__actor} key={actor.id}>
+                <img className={css.img} src={`https://image.tmdb.org/t/p/w200${actor.profile_path}`}
                     alt=''/>
                 <p className={css.title}>{actor.name}</p>
                 <p className={css.title}>{actor.character} </p>
         </div>
-        }
-            
-        )}
+        })}
         </div>
     )
 }
