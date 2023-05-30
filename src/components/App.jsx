@@ -11,11 +11,7 @@ export default function App(){
   return (
     <Routes>
       <Route path='/' element={<Layout />}>
-         <Route index element={<HomePage />} />
-         {/* <Route path='/:filmId' element={<FilmDetails />}>
-          <Route path='cast' element={<Cast />} />
-          <Route path='reviews' element={ <Reviews/>} /> */}
-        {/* </Route> */}
+        <Route index element={<HomePage />} />
         <Route path='movies' element={<MoviesPage />} />
         <Route path='/movies/:filmId' element={<FilmDetails />} >
           <Route path='cast' element={<Cast />} />
@@ -29,4 +25,3 @@ export default function App(){
 }
 
 
-// 9dc8cf1c3b797577de272ea272eaf078

@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import css from '../Pages/HomePage.module.css'
 
 export default function HomePage() {
 
@@ -10,6 +11,7 @@ export default function HomePage() {
   const location = useLocation();
 
   useEffect(() => {
+    localStorage.clear();
     const axiosResponse = async () => {
     const BASE_URL = 'https://api.themoviedb.org/3/trending/all/day';
     try {
@@ -22,8 +24,10 @@ export default function HomePage() {
   },[])
 
   return (<>
-    <div>Trending Today</div>
-    <ul>{results.map(film => <li key={film.id}><Link to={`movies/${film.id}`} state={location}>{film.name}{film.title}</Link>
+    <h1 className={css.title}>Trending Today</h1>
+    <ul className={css.list}>{results.map(film =>
+      <li className={css.item} key={film.id}>
+        <Link className={css.link} to={`movies/${film.id}`} state={location}>{film.name}{film.title}</Link>
             </li>)}
             </ul>
    </>

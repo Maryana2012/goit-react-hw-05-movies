@@ -1,0 +1,37 @@
+.form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.input{
+    width: 200px;
+    height: 30px;
+    border: none;
+    outline: 2px solid rgb(78, 78, 135);
+    border-radius: 10px;
+    margin-right: 10px;
+    padding: 5px;
+    color: rgb(78, 78, 135);
+    font-size: 16px;
+}
+.button__search{
+width: 100px;
+height: 40px;
+border: 2px solid rgb(78, 78, 135);
+border-radius: 10px;
+background-color: antiquewhite;
+color: rgb(78, 78, 135);
+font-size: 16px;
+font-weight: 700;
+}
+.link{
+text-decoration: none;
+color: rgb(78, 78, 135);
+}
+.item{
+    color: rgb(78, 78, 135);
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 5px;
+}

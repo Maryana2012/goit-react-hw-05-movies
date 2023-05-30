@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import css from './Cast.module.css';
 
 export default function Cast() {
  
@@ -23,14 +24,17 @@ export default function Cast() {
     }, [idNumber])
     
     return (
-        <> {actors.map((actor) => { return <div  key={actor.id}><img  src={actor.profile_path} alt="actor.name" />
-                <p>{actor.name}</p>
-                <p>{actor.character} </p>
+      <div className={css.container}> {actors.map((actor) => {
+        return <div className={css.container__actor} key={actor.id}>
+          <img className={css.img} src={`https://image.tmdb.org/t/p/w200${actor.profile_path}`}
+                    alt=''/>
+                <p className={css.title}>{actor.name}</p>
+                <p className={css.title}>{actor.character} </p>
         </div>
         }
             
         )}
-        </>
+        </div>
     )
 }
 

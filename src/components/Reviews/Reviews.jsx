@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import css from './Reviews.module.css';
 
 export default function Reviews() {
 
@@ -15,9 +16,7 @@ export default function Reviews() {
     const BASE_URL = `https://api.themoviedb.org/3/movie/${idNumber}/reviews`;
     try {
       const response = await axios.get(`${BASE_URL}?api_key=9dc8cf1c3b797577de272ea272eaf078`);
-      
       setArticles(response.data.results);
-      
     }
     catch(error){console.log(error)}
   }
@@ -31,10 +30,13 @@ export default function Reviews() {
       {articles.map(article => 
       { 
         return <div key={article.id}>
-          <p>Author:</p>
+          <div className={css.author}>
+          <p className={css.title}>Author:</p>
           <p>{article.author}</p>
-          <p>Content:</p>
-          <p>{ article.content}</p>
+          </div> 
+         
+          <p className={css.title}>Content:</p>
+          <p className={css.content}>{ article.content}</p>
         </div>
         
       }
