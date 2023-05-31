@@ -73,7 +73,7 @@ export default function FilmDetails() {
                 <li className={css.item}><Link className= {css.link} to='reviews'>Reviews</Link></li>
             </ul>
         </div>
-         <Suspense>
+         <Suspense fallback={<div>Loading...</div>}>
             <Outlet />
          </Suspense>
              
